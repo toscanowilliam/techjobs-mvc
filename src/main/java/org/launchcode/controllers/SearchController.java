@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by LaunchCode
@@ -25,7 +26,7 @@ public class SearchController {
 
     // TODO #1 - Create handler to process search request and display results
 
-    @RequestMapping(value="search/results", method= RequestMethod.GET)
+    @RequestMapping(value="results", method= RequestMethod.GET)
     public String processSearch(Model model, @RequestParam String searchTerm, @RequestParam String searchType){
 
         if (searchType.equals("all")) {
@@ -44,7 +45,7 @@ public class SearchController {
         }
 
 
-            return "search/results";
+            return "search";
     }
 
 

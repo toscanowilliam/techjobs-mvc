@@ -38,15 +38,18 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
-    <div class="container body-content">
-        <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
-        <h2>View All</h2>
-        <ul>
-            <li th:each="column : ${columns}">
-                <a th:href="@{/search/results/values(column=${column.key})}" th:text="${column.value}"></a>
-            </li>
-        </ul>
-    </div>
+
+    <table class="job-listing" th:each="jobHash : ${jobs}">
+        <tr th:each="field : ${jobHash}">
+            <td th:text="${field.key}"></td>
+            <td th:text="${field.value}"></td>
+        </tr>
+    </table>
+
+
+
+
+
 
 </div>
 
